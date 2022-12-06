@@ -10,6 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:src="@drawable/map"
+        android:layout_marginTop="-16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -18,6 +19,7 @@
         android:layout_width="120dp"
         android:layout_height="70dp"
         android:src="@drawable/car"
+        android:id="@+id/img_car_location"
         app:layout_constraintBottom_toTopOf="@+id/card_info"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -38,6 +40,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="10dp"
+            android:id="@+id/btn_arrow_left"
             android:src="@drawable/arrow_ic" />
 
     </com.google.android.material.card.MaterialCardView>
@@ -58,6 +61,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="10dp"
+            android:id="@+id/btn_arrow_right"
             android:src="@drawable/share_ic" />
 
     </com.google.android.material.card.MaterialCardView>
@@ -65,9 +69,10 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/card_info"
         android:layout_width="match_parent"
-        android:layout_height="550dp"
+        android:layout_height="580dp"
         app:cardBackgroundColor="#F9864A"
         app:cardCornerRadius="30dp"
+        android:layout_marginBottom="-22dp"
         app:layout_constraintBottom_toBottomOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -93,6 +98,7 @@
                 android:layout_height="wrap_content"
                 android:drawablePadding="12dp"
                 android:text="4.8"
+                android:id="@+id/txt_review"
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 app:drawableLeftCompat="@drawable/star_ic"
@@ -101,10 +107,11 @@
                 app:layout_constraintTop_toTopOf="@+id/txt_info" />
 
 
-            <com.google.android.material.card.MaterialCardView
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="480dp"
+                android:layout_height="530dp"
                 app:cardCornerRadius="30dp"
+                android:layout_marginBottom="-20dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent">
@@ -155,14 +162,13 @@
                                 android:id="@+id/txt_date_start"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_margin="12dp"
                                 android:layout_marginTop="12dp"
                                 android:text="16 Feb 2022"
                                 android:textColor="@color/black"
                                 android:textSize="20sp"
-                                android:layout_margin="12dp"
-                                app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintBottom_toBottomOf="parent"
-                                 />
+                                app:layout_constraintStart_toStartOf="parent" />
 
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -204,8 +210,7 @@
                                 android:textColor="@color/black"
                                 android:textSize="20sp"
                                 app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintStart_toStartOf="parent"
-                                 />
+                                app:layout_constraintStart_toStartOf="parent" />
 
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -260,6 +265,7 @@
                                 android:layout_marginEnd="12dp"
                                 android:text="0.5km"
                                 android:textSize="18sp"
+                                android:id="@+id/txt_km"
                                 app:layout_constraintBottom_toBottomOf="@+id/txt_address"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintTop_toTopOf="@+id/txt_address" />
@@ -290,23 +296,22 @@
                         app:layout_constraintStart_toStartOf="@id/txt_payment"
                         app:layout_constraintTop_toBottomOf="@+id/txt_payment"
                         app:strokeColor="@color/grey"
-                        app:strokeWidth="1dp" >
+                        app:strokeWidth="1dp">
 
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent">
 
 
-
                             <ImageView
-                                android:layout_width="wrap_content"
-                                android:src="@drawable/card_ic2"
-                                android:layout_marginStart="18sp"
                                 android:id="@+id/img_card1"
-                                app:layout_constraintStart_toStartOf="@id/img_card2"
-                                app:layout_constraintTop_toTopOf="@+id/img_card2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="18sp"
+                                android:src="@drawable/card_ic2"
                                 app:layout_constraintBottom_toBottomOf="@+id/img_card2"
-                                android:layout_height="wrap_content"/>
+                                app:layout_constraintStart_toStartOf="@id/img_card2"
+                                app:layout_constraintTop_toTopOf="@+id/img_card2" />
 
                             <ImageView
                                 android:id="@+id/img_card2"
@@ -320,16 +325,16 @@
 
 
                             <TextView
+                                android:id="@+id/txt_master_card"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="mastercard"
-                                android:textSize="12sp"
-                                android:id="@+id/txt_master_card"
-                                android:textColor="@color/black"
                                 android:layout_margin="8dp"
-                                app:layout_constraintStart_toStartOf="@+id/img_card2"
+                                android:text="mastercard"
+                                android:textColor="@color/black"
+                                android:textSize="12sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="@+id/img_card1"
-                                app:layout_constraintBottom_toBottomOf="parent"/>
+                                app:layout_constraintStart_toStartOf="@+id/img_card2" />
 
 
                             <TextView
@@ -346,14 +351,14 @@
 
 
                             <ImageView
+                                android:id="@+id/img_arrow"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:src="@drawable/arrow_right_ic"
-                                android:id="@+id/img_arrow"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"
                                 android:layout_margin="16dp"
-                                app:layout_constraintBottom_toBottomOf="parent"/>
+                                android:src="@drawable/arrow_right_ic"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
 
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -376,7 +381,7 @@
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
-            </com.google.android.material.card.MaterialCardView>
+            </androidx.cardview.widget.CardView>
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
